@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './StudentList.css';
 
+
 function StudentList() {
     let [studentList, setStudentList] = useState([]);
 
@@ -10,6 +11,7 @@ function StudentList() {
         console.log('in useEffect')
         getStudents();
     }, []);
+
 
     const getStudents = () => {
         axios({

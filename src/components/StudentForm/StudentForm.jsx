@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 function StudentForm() {
-    
+    const history = useHistory();
+
     const [student, setStudent] = useState('');
-
-
+    
     // Called when the submit button is pressed
     const addStudent = (newStudent) => {
         // POST student to the server
@@ -26,6 +27,8 @@ function StudentForm() {
         event.preventDefault();
         addStudent(student);
         clearStudentFields();
+        //console.log ('Submit button pressed');
+        history.push(`/allStudents`);
     }
 
     // Clear fields of the form by reseting the user
